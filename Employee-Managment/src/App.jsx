@@ -1,6 +1,7 @@
 import { Login } from "./pages/Login";
 import { Home } from "./pages/Home";
 import { UserProvider, useUser } from "./lib/context/user";
+import RoutePath from "./routes/RoutePath";
 
 function App() {
   const isLoginPage = window.location.pathname === "/login";
@@ -9,7 +10,8 @@ function App() {
     <div>
       <UserProvider>
         <Navbar /> {/* Add the navbar before page content */}
-        <main>{isLoginPage ? <Login /> : <Home />}</main>
+        {/* <main>{isLoginPage ? <Login /> : <Home />}</main> */}
+        <RoutePath />
       </UserProvider>
     </div>
   );
